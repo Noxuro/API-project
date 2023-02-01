@@ -1,0 +1,112 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "description": "Code With Prince",
+        "version": "1.0.0",
+        "title": "Code With Prince Flask API Tutorial",
+        "license": {
+            "name": "MIT",
+            "url": "https://opensource.org/licenses/MIT"
+        }
+    },
+    "tags": [
+        {
+            "name": "Products API",
+            "description": "Test API"
+        }
+    ],
+    "servers": [
+        {
+            "url": "/"
+        }
+    ],
+    "components": {
+        "schemas": {
+            "Accueil": {
+                "type": "object",
+                "properties": {
+                    "name": {
+                        "type": "string"
+                    },
+                    "description": {
+                        "type": "string"
+                    }
+                }
+            },
+            "nom": {
+                "type": "string",
+                "properties": {
+                    "name": {
+                        "type": "string"
+                    }
+                }
+            },
+            "idMetier": {
+                "type": "integer",
+                "properties": {
+                    "name": {
+                        "type": "string"
+                    },
+                    "description": {
+                        "type": "string"
+                    }
+                }
+            }
+        }
+    },
+    "paths": {
+        "/Accueil": {
+            "post": {
+                "tags": [
+                    "Start of API"
+                ],
+                "summary": "Starting game",
+                "requestBody": {
+                    "description": "choosing your jobs",
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/Accueil"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/components/schemas/Accueil"
+                        }
+                    },
+                    "404": {
+                        "description": "NOT FOUND",
+                        "schema": {
+                            "$ref": "#/components/schemas/Accueil"
+                        }
+                    }
+                }
+            },
+            "get": {
+                "tags": [
+                    "Plateform to choose your jobs QCM"
+                ],
+                "summary": "Plateform to choose your jobs QCM",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/components/schemas/TodoList"
+                        }
+                    },
+                    "404": {
+                        "description": "NOT FOUND",
+                        "schema": {
+                            "$ref": "#/components/schemas/TodoList"
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
